@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { editUserName } from "../../api/ApiUser";
 import Buttons from '../buttons/Buttons';
-import './userInfo.css';
 
 function User() {
 
