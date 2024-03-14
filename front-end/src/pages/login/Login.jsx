@@ -48,7 +48,7 @@ function Login (){
             autoComplete="password"
             />
              {status === "error" && (
-        <div className="errorMessage" id="errorText">
+        <div className="errorMessage" id="errorMsg">
           {error}
         </div>
       )} 
