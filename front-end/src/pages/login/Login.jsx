@@ -14,7 +14,7 @@ function Login (){
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { status, } = useSelector(state => state.user)
+  const { status, error } = useSelector(state => state.user)
 
   useEffect(() => {
     if (status === true) {
@@ -47,7 +47,11 @@ function Login (){
             onChange={(e) => setPassword(e.target.value)} 
             autoComplete="password"
             />
-             
+             {status === "error" && (
+        <div className="errorMessage" id="errorText">
+          {error}
+        </div>
+      )} 
           </div>
           <div className='input-remember'>
             <label htmlFor='remember-me'>Remember me</label>
