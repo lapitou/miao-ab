@@ -40,8 +40,12 @@ function User() {
               <form>
                 <div className='input-wrapper'>
                   <label htmlFor='username'>Username:</label>
-                  <input id='username' type='text' onChange={(e) => setInputUserName(e.target.value)}
-                    value={inputUserName} />
+                  <input
+                    id='username'
+                    type='text'
+                    onChange={(e) => setInputUserName(e.target.value)}
+                    value={inputUserName}
+                  />
                 </div>
                 <div className='input-wrapper'>
                   <label htmlFor='first-name'>First Name:</label>
@@ -73,7 +77,8 @@ function User() {
                       dispatch(editUserName({ userName: inputUserName, token: token }));
                       toggleForm();
                     }}
-                    buttonName='Save' />
+                    buttonName='Save'
+                  />
                   <Buttons
                     className='modify-button'
                     type="onClick"
@@ -81,7 +86,8 @@ function User() {
                       e.preventDefault();
                       toggleForm();
                     }}
-                    buttonName='Cancel' />
+                    buttonName='Cancel'
+                  />
                 </div>
               </form>
 
