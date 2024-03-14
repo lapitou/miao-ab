@@ -26,7 +26,7 @@ function Header() {
           <img src={logo} alt='logo of Argent Bank' className='main-nav-logo-image' />
         </NavLink>
         {!token && (
-          <div>
+          <div className="main-nav">
             <NavLink to='/login' className='main-nav-item'>
               <i className='fa-solid fa-circle-user' />
               <p>Sign In</p>
@@ -34,7 +34,7 @@ function Header() {
           </div>
         )}
         {token && (
-          <div>
+          <div className="main-nav">
             <NavLink to='/profile/' className='main-nav-item'>
               <i className="fa fa-user-circle"></i>
               <span className="userNameCircle">{userName}</span>
