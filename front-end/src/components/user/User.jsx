@@ -35,60 +35,58 @@ function User() {
       {isToggle && (
         <>
           <div className='header'>
-            <main className='main bg-dark'>
-              <section className='sign-in-content edit-user'>
-                <i className="fa fa-user-circle sign-in-icon" />
-                <h2>Edit user info</h2>
-                <form>
-                  <div className='input-wrapper'>
-                    <label htmlFor='username'>Username:</label>
-                    <input id='username' type='text' onChange={(e) => setInputUserName(e.target.value)}
-                      value={inputUserName} />
-                  </div>
-                  <div className='input-wrapper'>
-                    <label htmlFor='first-name'>First Name:</label>
-                    <input
-                      id='firs-name'
-                      type='text'
-                      onChange={(e) => e.preventDefault()}
-                      value={firstName}
-                      disabled="disabled"
-                    />
-                  </div>
-                  <div className='input-wrapper'>
-                    <label htmlFor='last-name'>Last Name:</label>
-                    <input
-                      id='last-name'
-                      type='text'
-                      onChange={(e) => e.preventDefault()}
-                      value={lastName}
-                      disabled="disabled"
-                    />
-                  </div>
-                  <div></div>
-                  <div className='button-box'>
-                    <Buttons
-                      className='modify-button'
-                      type="onClick"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        dispatch(editUserName({ userName: inputUserName, token: token }));
-                        toggleForm();
-                      }}
-                      buttonName='Save' />
-                    <Buttons
-                      className='modify-button'
-                      type="onClick"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        toggleForm();
-                      }}
-                      buttonName='Cancel' />
-                  </div>
-                </form>
+            <section className='sign-in-content edit-user'>
+              <i className="fa fa-user-circle sign-in-icon" />
+              <h2>Edit user info</h2>
+              <form>
+                <div className='input-wrapper'>
+                  <label htmlFor='username'>Username:</label>
+                  <input id='username' type='text' onChange={(e) => setInputUserName(e.target.value)}
+                    value={inputUserName} />
+                </div>
+                <div className='input-wrapper'>
+                  <label htmlFor='first-name'>First Name:</label>
+                  <input
+                    id='firs-name'
+                    type='text'
+                    onChange={(e) => e.preventDefault()}
+                    value={firstName}
+                    disabled="disabled"
+                  />
+                </div>
+                <div className='input-wrapper'>
+                  <label htmlFor='last-name'>Last Name:</label>
+                  <input
+                    id='last-name'
+                    type='text'
+                    onChange={(e) => e.preventDefault()}
+                    value={lastName}
+                    disabled="disabled"
+                  />
+                </div>
+                <div></div>
+                <div className='button-box'>
+                  <Buttons
+                    className='modify-button'
+                    type="onClick"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      dispatch(editUserName({ userName: inputUserName, token: token }));
+                      toggleForm();
+                    }}
+                    buttonName='Save' />
+                  <Buttons
+                    className='modify-button'
+                    type="onClick"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      toggleForm();
+                    }}
+                    buttonName='Cancel' />
+                </div>
+              </form>
 
-              </section>
-            </main>
+            </section>
           </div>
         </>)}
     </>
