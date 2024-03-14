@@ -1,30 +1,32 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import {useDispatch, useSelector} from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { userLogIn } from "../../api/ApiUser.js";
 import { useNavigate } from 'react-router-dom';
 
 import Buttons from '../../components/buttons/Buttons.jsx';
 import './login.css';
 
-function Login (){
+function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
- 
+  const [errorMessage, setErrorMessage] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { status, error } = useSelector(state => state.user)
+  const { status } = useSelector(state => state.user)
 
   useEffect(() => {
     if (status === true) {
       navigate(`/Profile/`)
-    }
+    } 
   })
-
-
-
-  return(
+  const handleLogin = () => {
+    setTimeout(() => {
+      setErrorMessage(true);
+    }, 400);
+  };
+  return (
     <main className='main bg-dark'>
       <section className='sign-in-content'>
         <i className='fa fa-user-circle sign-in-icon' />
@@ -32,40 +34,37 @@ function Login (){
         <form>
           <div className='input-wrapper'>
             <label htmlFor='email'>Username</label>
-            <input 
-            id='email'
-            type='email' 
-            autoComplete="email"
-            onChange={(e) => setEmail(e.target.value)}
+            <input
+              id='email'
+              type='email'
+              autoComplete="email"
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className='input-wrapper'>
             <label htmlFor='password'>Password</label>
-            <input 
-            id='password' 
-            type='password'   
-            onChange={(e) => setPassword(e.target.value)} 
-            autoComplete="password"
+            <input
+              id='password'
+              type='password'
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="password"
             />
-             {status === "error" && (
-        <div className="errorMessage" id="errorMsg">
-          {error}
-        </div>
-      )} 
+             {errorMessage && <div>Identifiants invalides, Veuillez réessayer.</div>}
           </div>
           <div className='input-remember'>
             <label htmlFor='remember-me'>Remember me</label>
-            <input id='remember-me' type='checkbox'/>
-          </div>     
+            <input id='remember-me' type='checkbox' />
+          </div>
         </form>
-        <Buttons 
-        className='sign-in-button' 
-        type='onClick' 
-        buttonName='Sign In'
-        onClick={(e) => {
-          e.preventDefault();
-          dispatch(userLogIn({ email: email, password: password }));
-        }}
+        <Buttons
+          className='sign-in-button'
+          type='onClick'
+          buttonName='Sign In'
+          onClick={(e) => {
+            e.preventDefault();
+            dispatch(userLogIn({ email: email, password: password }));
+            handleLogin();
+          }}
         />
       </section>
     </main>
