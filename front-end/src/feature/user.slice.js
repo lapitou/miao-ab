@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { userLogIn, editUserName } from "../api/ApiUser"
+import { logIn, editUserName } from "../api/ApiUser"
 
 const initialState = {
     user: "",
@@ -7,7 +7,7 @@ const initialState = {
     error: "",
   };
   
-const userLogInSlice = createSlice({
+const authSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
@@ -19,7 +19,7 @@ const userLogInSlice = createSlice({
     },
     extraReducers(builder) {
       builder
-        .addCase(userLogIn.fulfilled, (state, action) => {
+        .addCase(logIn.fulfilled, (state, action) => {
           state.user ={
             email: action.payload.email,
             token: action.payload.token,
@@ -31,7 +31,7 @@ const userLogInSlice = createSlice({
           state.status = true;
           state.error = "";
         })
-        .addCase(userLogIn.rejected, (state, action) => {
+        .addCase(logIn.rejected, (state, action) => {
           state.status = "error";
           state.error = action.payload;
         })
@@ -44,6 +44,6 @@ const userLogInSlice = createSlice({
     },
   });
   
-  export default userLogInSlice.reducer;
-  export const {logOut} = userLogInSlice.actions;
+  export default authSlice.reducer;
+  export const {logOut} = authSlice.actions;
   

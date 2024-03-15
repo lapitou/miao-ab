@@ -1,12 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-const fetchLogin = "http://localhost:3001/api/v1/user/login"
-const fetchPofile = "http://localhost:3001/api/v1/user/profile"
-// user login
-export const userLogIn = createAsyncThunk(
+const baseUrl = 'http://localhost:3001/api/v1/user';
+// user logIn
+export const logIn = createAsyncThunk(
   "user/logIn",
   async ({ email, password }, thunkApi) => {
     try {
-      const response = await fetch(fetchLogin, {
+      const response = await fetch(`${baseUrl}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
@@ -36,7 +35,7 @@ export const editUserName = createAsyncThunk(
   async ({ userName, token }, thunkApi) => {
     try {
       const response = await fetch(
-        fetchPofile,
+        `${baseUrl}/profile`,
         {
           method: "PUT",
           headers: {
@@ -58,7 +57,7 @@ export const editUserName = createAsyncThunk(
 );
 // get user information
 async function getUserInfos(token) {
-  const response = await fetch(fetchPofile, {
+  const response = await fetch(`${baseUrl}/profile`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux"
-import { userLogIn } from "../../api/ApiUser.js";
+import { logIn } from "../../api/ApiUser.js";
 import { useNavigate } from 'react-router-dom';
 
 import Buttons from '../../components/buttons/Buttons.jsx';
@@ -24,7 +24,7 @@ function Login() {
   const handleLogin = () => {
     setTimeout(() => {
       setErrorMessage(true);
-    }, 400);
+    }, 500);
   };
   return (
     <main className='main bg-dark'>
@@ -62,7 +62,7 @@ function Login() {
           buttonName='Sign In'
           onClick={(e) => {
             e.preventDefault();
-            dispatch(userLogIn({ email: email, password: password }));
+            dispatch(logIn({ email: email, password: password }));
             handleLogin();
           }}
         />
