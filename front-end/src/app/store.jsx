@@ -3,10 +3,10 @@ import {combineReducers} from "redux";
 import storage from 'redux-persist/lib/storage/session';
 import { persistReducer} from 'redux-persist';
 import thunk from 'redux-thunk'
-import userReducer from "../feature/user.slice";
+import firstReducer from "../feature/user.slice";
 
 const reducers = combineReducers({
-  user: userReducer
+  user: firstReducer
 })
 const persistConfig = {
   key:'root' ,
