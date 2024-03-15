@@ -38,7 +38,7 @@ function User() {
               <i className="fa fa-user-circle sign-in-icon" />
               <h2>Edit user info</h2>
               <form>
-                <div className='input-wrapper'>
+                <div className='input-wrapper editForm'>
                   <label htmlFor='username'>Username:</label>
                   <input
                     id='username'
@@ -47,7 +47,7 @@ function User() {
                     value={inputUserName}
                   />
                 </div>
-                <div className='input-wrapper'>
+                <div className='input-wrapper editForm' >
                   <label htmlFor='first-name'>First Name:</label>
                   <input
                     id='firs-name'
@@ -57,7 +57,7 @@ function User() {
                     disabled="disabled"
                   />
                 </div>
-                <div className='input-wrapper'>
+                <div className='input-wrapper editForm'>
                   <label htmlFor='last-name'>Last Name:</label>
                   <input
                     id='last-name'
