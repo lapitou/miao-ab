@@ -1,0 +1,89 @@
+.userHeader {
+    color: #fff;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+   /* min-width: 350px;*/
+  }
+  
+  .edit-button {
+    background-color: #00bc77;
+    border-color: #00bc77;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0.625rem;
+    border: 0;
+  }
+  .editForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+    gap: 5px;
+  }
+  .edit-user {
+    padding: 1rem auto 0 auto;
+    margin: 0 auto;
+    border: solid 10px rgb(138, 124, 124);
+    /* min-width: 350px;*/
+  }
+  .editUserInfo {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+    min-width: 330px;
+  }
+  h2 {
+    text-align: center;
+    color: black;
+  }
+  
+  .button-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .modify-button {
+    background-color: #00bc77;
+    border-color: #00bc77;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 1rem;
+  
+    padding: 0.625rem;
+    border: 0;
+    width: 48%;
+  }
+  label.labelEdit {
+    color: #333;
+  
+    padding: 10px;
+    display: flex;
+    width: auto;
+  }
+  
+  #userName,
+  #firstName,
+  #lastName {
+    width: 130px;
+    height: 1.5em;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* margin-bottom: 10px;*/
+    font-size: 1em;
+  }
+  #firstName,
+  #lastName {
+    color: #b0adad;
+    background-color: #dddada;
+  }
+  #userName {
+    color: #333;
+  }
+  

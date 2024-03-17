@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux"
-import { logIn } from "../../api/ApiUser.js";
+import { logIn, getUserInfo } from "../../api/ApiUser.js";
 import { useNavigate } from 'react-router-dom';
 
 import Buttons from '../../components/buttons/Buttons.jsx';
