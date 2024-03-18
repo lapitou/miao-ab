@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 createSlice est une fonction qui va générer automatiquement des créateurs d'action et des types d'action qui correspondent aux réducer et à l'état.
 
 */
-import { logIn, editUserName } from "../api/ApiUser"
+import { logIn, editUser } from "../api/ApiUser"
 //condition d'état initiale du site, pas user, pas d'erreur, et un status de connexion sur false
 const initialState = {
     user: "",
@@ -45,7 +45,7 @@ const authSlice = createSlice({
           state.status = "error";
           state.error = action.payload;
         })
-        .addCase(editUserName.fulfilled, (state, action) => {
+        .addCase(editUser.fulfilled, (state, action) => {
           let user = state.user;
           user.userName = action.payload.body.userName;
           state.user = user;

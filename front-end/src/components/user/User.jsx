@@ -1,7 +1,7 @@
 import './user.css';
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { editUserName } from "../../api/ApiUser";
+import { editUser } from "../../api/ApiUser";
 import Buttons from '../buttons/Buttons';
 
 function User() {
@@ -74,7 +74,7 @@ function User() {
                     type="onClick"
                     onClick={(e) => {
                       e.preventDefault();
-                      dispatch(editUserName({ userName: inputUserName, token: token }));
+                      dispatch(editUser({ userName: inputUserName, token: token }));
                       toggleForm();
                     }}
                     buttonName='Save'

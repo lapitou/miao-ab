@@ -35,7 +35,7 @@ export const logIn = createAsyncThunk(
 );
 // edit username
 // méthode PUT pour envoyer le nouveau UserNAme avec bien sûr contrôle du token.
-export const editUserName = createAsyncThunk(
+export const editUser = createAsyncThunk(
   "user/editUserName",
   async ({ userName, token }, thunkApi) => {
     try {
