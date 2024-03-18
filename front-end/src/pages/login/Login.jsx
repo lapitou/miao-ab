@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux"
-import { logIn, getUserInfo } from "../../api/ApiUser.js";
+import { logIn } from "../../api/ApiUser.js";
 import { useNavigate } from 'react-router-dom';
 
 import Buttons from '../../components/buttons/Buttons.jsx';
@@ -21,6 +21,7 @@ function Login() {
       navigate(`/Profile/`)
     } 
   })
+  // setTimeout pour masquer l'affichage du message d'erreur pendant 500ms. Ce message s'affiche même si le login est réussi.
   const handleLogin = () => {
     setTimeout(() => {
       setErrorMessage(true);
@@ -49,7 +50,7 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="password"
             />
-             {errorMessage && <div>Identifiants invalides, Veuillez réessayer.</div>}
+             {errorMessage && <div className="errorMessage">Identifiants invalides ou absents, veuillez réessayer !</div>}
           </div>
           <div className='input-remember'>
             <label htmlFor='remember-me'>Remember me</label>
