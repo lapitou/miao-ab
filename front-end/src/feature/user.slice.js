@@ -12,9 +12,10 @@ const initialState = {
     error: "",
   };
  /*
- le logout a les même conditions que l'initiale. Les autres actions sont passer en extraReducer.
+ le logout a les même conditions que l'initiale. Les autres actions sont passés en extraReducer(login accepté, rejeté, édition du userNAme).
  Le reducer contient la logique de mise à jour des données.
  On utilise les extrareducers lorsque l'on traite une action déjà définie par les createAsyncThunk.
+ createThunk définis un thunk pour récupérer certaines données d'une API. Dans notre cas nous avons logIn et editUserName.
  */ 
 const authSlice = createSlice({
     name: "user",
