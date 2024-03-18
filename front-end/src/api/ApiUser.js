@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 const baseUrl = 'http://localhost:3001/api/v1/user';
 // user logIn
 //createAsyncThunk
-// Une fonction qui accepte une chaîne de type d'action Redux et une fonction de rappel qui doit renvoyer une promesse. Il génère des types d'actions de cycle de vie de promesse en fonction du préfixe de type d'action que vous transmettez et renvoie un créateur d'action de réflexion qui exécutera le rappel de promesse et distribuera les actions de cycle de vie en fonction de la promesse renvoyée.
+// Une fonction qui accepte une chaîne de type d'action Redux et une fonction de rappel qui doit renvoyer une promesse. Il génère des types d'actions de cycle de vie de promesse en fonction du préfixe de type d'action que vous transmettez et renvoie un créateur d'action de réflexion qui exécutera le rappel de promesse et distribuera les actions de cycle de vie en fonction de la promesse renvoyée. Pour la compréhension de l'utilisation passer sur user.slice.js
 
 export const logIn = createAsyncThunk(
   "user/logIn",
